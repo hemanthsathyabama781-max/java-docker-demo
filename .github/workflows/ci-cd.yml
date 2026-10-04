@@ -21,6 +21,12 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Check files
+        run: |
+          pwd
+          ls -la
+          find . -name "pom.xml" -type f
+
       - name: Maven Build
         run: mvn clean verify
 

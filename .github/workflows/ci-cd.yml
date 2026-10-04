@@ -24,7 +24,13 @@ jobs:
       - name: Check files
         run: |
           pwd
+          echo "Files in repository:"
           ls -la
+          echo "All files:"
+          find . -maxdepth 3 -type f
+          echo "Java files:"
+          find . -name "*.java" -type f
+          echo "POM files:"
           find . -name "pom.xml" -type f
 
       - name: Maven Build
